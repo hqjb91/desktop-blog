@@ -33,13 +33,13 @@ const TaskPanel = ({active, searchTerm, setTaskPanelActive, searchBarRef}: TaskP
       document.removeEventListener('mousedown', handleClickOutside);
     }
 
-  }, [panelRef])
+  }, [panelRef, searchBarRef])
 
   return (
     <div 
       ref={panelRef}
       className={clsx(
-        "p-4 transition-all fixed left-[35%] w-[35%] h-[60%] bg-black opacity-80 rounded-xl", 
+        "p-4 transition-all fixed lg:left-[40%] lg:w-[40%] left-[20%] w-[65%] h-[60%] bg-black opacity-80 rounded-xl", 
         active ? "bottom-16" : "bottom-[-160%]"
     )}>
       {searchTerm}

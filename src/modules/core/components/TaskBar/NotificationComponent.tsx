@@ -7,7 +7,9 @@ const NotificationComponent = () => {
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
-        setMounted(true); // Ensure that this component only renders the date after mounting
+        setMounted(true); 
+        // Ensure that this component only renders the date after mounting
+        // This is to fix a bug observed due to SSR + date interval update
     }, []);
 
     useEffect(() => {
@@ -17,11 +19,18 @@ const NotificationComponent = () => {
         }
     }, [mounted]);
 
-    if (!mounted) return null; // Render nothing on the server
+    // Return dummy divs to prevent layout shifts
+    if (!mounted) return (
+    <div className="w-40 flex flex-row hidden lg:block">
+        <div className="flex flex-col text-white text-sm items-end p-1 pr-3">
+            <div></div>
+            <div></div>
+        </div>
+    </div>);
 
     return (
-        <div className="flex flex-row">
-            <div className="flex flex-col text-white p-1 text-sm items-end mr-2">
+        <div className="w-40 flex flex-row hidden lg:block">
+            <div className="flex flex-col text-white text-sm items-end p-1 pr-3">
                 <div>{date.toLocaleTimeString()}</div>
                 <div>{date.toLocaleDateString()}</div>
             </div>

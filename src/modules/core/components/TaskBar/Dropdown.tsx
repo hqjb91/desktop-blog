@@ -12,7 +12,7 @@ const Dropdown = ({ submenus, dropdown }: DropdownProps) => {
         <ul className="hidden">
             { dropdown }
             {submenus.map((submenu, index) => (
-                <MenuItems items={submenu} key={index} />
+                <MenuItems items={submenu} key={index} activeApp="" />
             ))}
         </ul>
     );
