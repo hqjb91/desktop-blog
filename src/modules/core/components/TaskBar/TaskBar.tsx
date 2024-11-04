@@ -104,7 +104,7 @@ const TaskBar = ({ onItemClick, activeApp }: TaskBarProps) => {
           {menuItemsData.map((menuItem, index) =>
             menuItem.submenu ? (
               <div className="relative group" key={index}>
-                <div className="absolute bottom-[100%] -left-[100%] bg-black/80 p-3 m-3 rounded-lg min-w-48 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300">
+                <div className="absolute bottom-[100%] lg:-left-[100%] right-[0%] bg-black/80 p-3 m-3 rounded-lg min-w-48 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300">
                   {menuItem.submenu.map((submenuItem, index) => (
                     <div
                       key={index}
