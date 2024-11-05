@@ -39,7 +39,7 @@ const TaskPanel = ({active, searchTerm, setTaskPanelActive, searchBarRef}: TaskP
     <div 
       ref={panelRef}
       className={clsx(
-        "p-4 transition-all fixed lg:left-[35%] lg:w-[40%] left-[5%] w-[90%] h-[60%] bg-black opacity-80 rounded-xl", 
+        "z-50 p-4 transition-all fixed lg:left-[35%] lg:w-[40%] left-[5%] w-[90%] h-[60%] bg-black opacity-90 rounded-xl", 
         active ? "bottom-16" : "bottom-[-160%]"
     )}>
       {searchTerm}

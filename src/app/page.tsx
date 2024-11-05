@@ -6,6 +6,7 @@ import PortfolioPage from "@/modules/blog/components/PortfolioPage";
 import TaskBar from "@/modules/core/components/TaskBar";
 import BrowserWindow from "@/modules/core/components/Window";
 import Workspace from "@/modules/core/components/Workspace";
+import AnimatedSignature from "@/modules/core/components/Workspace/AnimatedSignature";
 import { useState } from "react";
 
 // Define the available components that can be opened
@@ -55,6 +56,8 @@ export default function Home() {
         onItemClick={(appName) => handleOpen(appName)}
         apps={Object.values(APPS)} 
       />
+
+      <AnimatedSignature />
       
       <TaskBar 
         onItemClick={(appName) => handleOpen(appName)}
